@@ -1,0 +1,73 @@
+==================================================================
+TOOLS
+------------------------------------------------------------------
+nikto
+-nikto -h ip or url
+dirsearch 
+-dirsearch -l urls in a txt file -w path to wordlist -o output file
+cat filename | httpx -sc -title > output file
+subfinder
+gobuster
+-gobuster dir -u http://example.com -w /path/to/wordlist
+assetfinder
+-assetfinder -subs-only url
+httprobe
+sublist3r
+-while read domain; do sublist3r -d $domain -o output.txt; done < urls.txt
+ffuf
+-ffuf -u url/FUZZ -w /path/to/wordlist -fc 403,301,302 -c -t 200 -e .html,.php,.txt,.zip,.jsp
+naabu
+403
+subprober
+-subprober -f urls.txt -ip -sc
+curl
+-curl -d "param1=value1&param2=value2" -X POST http://example.com - add data to request
+-curl -H "Content-Type: application/json" http://example.com - include headers
+katana
+waybackurls
+-cat urls.txt | waybackurls
+spyhunt
+gau
+-cat urls.txt | gau
+whois
+secretfinder
+-cat urls.txt | while read url; do secretfinder -i $url -o cli >> secretfinderfile.txt; done
+searchsploit 
+-searchsploit whatever you wanna search for
+medusa-for bruteforcing passwords
+-medusa -U nameslist.txt -P passwordlist.txt -M (service like ssh) -h(host ipaddress)
+ 
+=================================================================
+ONE-LINERS
+-----------------------------------------------------------------
+anew
+grep ".js$" '.js$' -the dollarsign makes sure nothing comes after the .js
+egrep -av "^htttp:" -removes anyting that starts with that word or symbol
+=================================================================
+XSS
+-----------------------------------------------------------------
+cat urls.txt | kxss
+'"><img src=x onerror=alert(1);>'
+<button%20popovertarget=x>Click%20me</button><img%20onbeforetoggle=alert(1)%20popover%20id=x>XSS
+
+=================================================================
+Addons
+-----------------------------------------------------------------
+Wappalyzser
+webarchive
+javascript switcher
+foxyproxy
+
+=================================================================
+Some Other stuff
+-----------------------------------------------------------------
+Staying annonymous
+macchanger
+-macchanger -r
+ipchanger
+tor
+
+crunch
+-generates random values
+
+----------------------------------------------------------------
